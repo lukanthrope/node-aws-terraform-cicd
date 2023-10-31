@@ -28,3 +28,17 @@ export interface ArticlesRepository {
 
   remove(id: number): Promise<Article>;
 }
+
+export interface ArticlesService {
+  create(data: CreateArticle): Promise<Article>;
+
+  findDrafts(): Promise<Article[]>;
+
+  findAll(): Promise<Article[]>;
+
+  findOne(id: number): Promise<Article>;
+
+  update(id: number, data: UpdateArticle): Promise<Article>;
+
+  remove(id: number): Promise<Article>;
+}
