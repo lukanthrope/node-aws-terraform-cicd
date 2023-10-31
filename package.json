@@ -2,7 +2,7 @@
   "name": "node-aws-terraform-cicd",
   "version": "0.0.1",
   "description": "",
-  "author": "",
+  "author": "Lukanthrope",
   "private": true,
   "license": "UNLICENSED",
   "scripts": {
