@@ -2,7 +2,7 @@
   "name": "node-aws-terraform-cicd",
   "version": "0.0.1",
   "description": "",
-  "author": "",
+  "author": "Lukanthrope",
   "private": true,
   "license": "UNLICENSED",
   "scripts": {
@@ -20,11 +20,14 @@
     "test:e2e": "jest --config ./test/jest-e2e.json"
   },
   "dependencies": {
+    "@fastify/static": "^6.12.0",
     "@nestjs/common": "^10.0.0",
     "@nestjs/core": "^10.0.0",
     "@nestjs/platform-express": "^10.0.0",
     "@nestjs/platform-fastify": "^10.2.7",
+    "@nestjs/swagger": "^7.1.14",
     "@prisma/client": "^5.5.2",
+    "class-validator": "^0.14.0",
     "reflect-metadata": "^0.1.13",
     "rxjs": "^7.8.1"
   },
@@ -58,6 +61,9 @@
       "json",
       "ts"
     ],
+    "modulePaths": [
+      "<rootDir>"
+    ],
     "rootDir": "src",
     "testRegex": ".*\\.spec\\.ts$",
     "transform": {
@@ -67,7 +73,10 @@
       "**/*.(t|j)s"
     ],
     "coverageDirectory": "../coverage",
-    "testEnvironment": "node"
+    "testEnvironment": "node",
+    "moduleNameMapper": {
+      "^src/(.*)$": "<rootDir>/$1"
+    }
   },
   "prisma": {
     "seed": "ts-node prisma/seeds/index.ts"

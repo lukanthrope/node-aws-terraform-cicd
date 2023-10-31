@@ -4,7 +4,7 @@ import {
   CreateArticle,
   UpdateArticle,
   ArticlesRepository as IArticlesRepository,
-} from 'src/services/articles/interfaces';
+} from 'src/domain/articles/interfaces';
 
 @Injectable()
 export class ArticlesRepository implements IArticlesRepository {
