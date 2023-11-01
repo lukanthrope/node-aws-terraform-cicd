@@ -26,5 +26,9 @@ jobs:
         run: npm run test
       - name: Start containers
         run: docker-compose -f "docker-compose.yml" up -d --build
+      - name: Migrations
+        run: npx prisma migrate dev
+      - name: Seed database
+        run: npx prisma db seed
       - name: Run e2e tests
         run: npm run test:e2e
