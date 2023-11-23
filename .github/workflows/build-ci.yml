@@ -31,7 +31,7 @@ jobs:
         run: npm run test
 
       - name: Start containers
-        run: docker compose down && docker compose up --build -d
+        run: docker-compose -f "docker-compose.yml" up -d --build
 
       - name: Migrations
         run: npx prisma migrate dev
