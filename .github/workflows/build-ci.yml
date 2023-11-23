@@ -30,14 +30,8 @@ jobs:
       - name: Run tests
         run: npm run test
 
-      - name: Check postgres port
-        run: lsof -i :5432
-
       - name: Start containers
         run: docker-compose -f "docker-compose.yml" up -d --build
-
-      - name: Check postgres port
-        run: lsof -i :5432
 
       - name: Migrations
         run: npx prisma migrate dev
