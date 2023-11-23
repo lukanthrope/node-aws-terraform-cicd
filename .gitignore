@@ -35,3 +35,9 @@ lerna-debug.log*
 !.vscode/extensions.json
 
 .env
+
+# infra
+
+/infra/.terraform
+/infra/*.hcl
+/infra/*.tfstate*
