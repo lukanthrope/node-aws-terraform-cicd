@@ -33,6 +33,9 @@ jobs:
       - name: Start containers
         run: docker-compose -f "docker-compose.yml" up -d --build
 
+      - name: Wait for PostgreSQL
+        run: docker-compose -f "docker-compose.yml" exec -T postgres sh -c 'while ! pg_isready -q -h localhost -U $DATABASE_USER; do sleep 2; done'
+
       - name: Migrations
         run: npx prisma migrate dev
 
